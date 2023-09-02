@@ -76,4 +76,4 @@ btns.forEach((btn, i) =>
     btn.addEventListener('click', () => ticTacToe(btn, i));
 });
 // Add click event listener to the reset button
-                                                                                                                                                                                                                                                    document.querySelector('#reset').addEventListener('click', resetGame);
+document.querySelector('#reset').addEventListener('click', resetGame);
