@@ -44,36 +44,36 @@ function checkWinner()
         result.innerHTML = "It's a draw!";
         enableResetButton();
         return true;
-                                                                                                                                                                                            }
-                                                                                                                                                                                                return false;
-                                                                                                                                                                                                }
-
-                                                                                                                                                                                                // Function to update the result display
-                                                                                                                                                                                                function updateResult() {
-                                                                                                                                                                                                    document.getElementById('current-player').innerText = currentPlayer;
-                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                    // Function to enable the reset button
-                                                                                                                                                                                                    function enableResetButton() {
-                                                                                                                                                                                                        document.getElementById('reset').disabled = false;
-                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                        // Function to reset the game
-                                                                                                                                                                                                        function resetGame() {
-                                                                                                                                                                                                            cells = ['', '', '', '', '', '', '', '', ''];
-                                                                                                                                                                                                                currentPlayer = 'X';
-                                                                                                                                                                                                                    btns.forEach((btn) => {
-                                                                                                                                                                                                                            btn.value = '';
-                                                                                                                                                                                                                                    btn.classList.remove('X', 'O');
-                                                                                                                                                                                                                                        });
-                                                                                                                                                                                                                                            result.innerHTML = `Player ${currentPlayer}'s Turn`;
-                                                                                                                                                                                                                                                document.getElementById('reset').disabled = true;
-                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                // Add click event listeners to the buttons
-                                                                                                                                                                                                                                                btns.forEach((btn, i) => {
-                                                                                                                                                                                                                                                    btn.addEventListener('click', () => ticTacToe(btn, i));
-                                                                                                                                                                                                                                                    });
-
-                                                                                                                                                                                                                                                    // Add click event listener to the reset button
+    }
+    return false;
+}
+// Function to update the result display
+function updateResult() 
+{
+    document.getElementById('current-player').innerText = currentPlayer;
+}
+// Function to enable the reset button
+function enableResetButton() 
+{
+    document.getElementById('reset').disabled = false;
+}
+// Function to reset the game
+function resetGame() 
+{
+    cells = ['', '', '', '', '', '', '', '', ''];
+    currentPlayer = 'X';
+    btns.forEach((btn) => 
+    {
+        btn.value = '';
+        btn.classList.remove('X', 'O');
+    });
+    result.innerHTML = `Player ${currentPlayer}'s Turn`;
+    document.getElementById('reset').disabled = true;
+}
+// Add click event listeners to the buttons
+btns.forEach((btn, i) => 
+{
+    btn.addEventListener('click', () => ticTacToe(btn, i));
+});
+// Add click event listener to the reset button
                                                                                                                                                                                                                                                     document.querySelector('#reset').addEventListener('click', resetGame);
