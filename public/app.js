@@ -5,18 +5,17 @@ let result = document.querySelector('.result');
 let btns = document.querySelectorAll('.btn');
 let conditions = [
     [0, 1, 2],
-        [3, 4, 5],
-            [6, 7, 8],
-                [0, 3, 6],
-                    [1, 4, 7],
-                        [2, 5, 8],
-                            [0, 4, 8],
-                                [2, 4, 6]
-                                ];
-
-                                // Function to handle a player's move
-                                function ticTacToe(btn, index) {
-                                    if (btn.value === '' && !checkWinner()) {
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+    ];
+function ticTacToe(btn, index) 
+{
+    if (btn.value === '' && !checkWinner()) {
                                             cells[index] = currentPlayer;
                                                     btn.value = currentPlayer;
                                                             btn.classList.add(currentPlayer);
