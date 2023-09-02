@@ -15,30 +15,35 @@ let conditions = [
     ];
 function ticTacToe(btn, index) 
 {
-    if (btn.value === '' && !checkWinner()) {
-                                            cells[index] = currentPlayer;
-                                                    btn.value = currentPlayer;
-                                                            btn.classList.add(currentPlayer);
-                                                                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                                                                            updateResult();
-                                                                                    checkWinner();
-                                                                                        }
-                                                                                        }
-
-                                                                                        // Function to check for a winner
-                                                                                        function checkWinner() {
-                                                                                            for (let condition of conditions) {
-                                                                                                    const [a, b, c] = condition;
-                                                                                                            if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
-                                                                                                                        result.innerHTML = `Player ${cells[a]} wins!`;
-                                                                                                                                    enableResetButton();
-                                                                                                                                                return true;
-                                                                                                                                                        }
-                                                                                                                                                            }
-                                                                                                                                                                if (!cells.includes('')) {
-                                                                                                                                                                        result.innerHTML = "It's a draw!";
-                                                                                                                                                                                enableResetButton();
-                                                                                                                                                                                        return true;
+    if (btn.value === '' && !checkWinner()) 
+    {
+                                            
+        cells[index] = currentPlayer;
+        btn.value = currentPlayer;
+        btn.classList.add(currentPlayer);
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        updateResult();
+        checkWinner();
+        }
+}
+// Function to check for a winner
+function checkWinner() 
+{
+    for (let condition of conditions) 
+    {
+        const [a, b, c] = condition;
+        if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) 
+        {
+            result.innerHTML = `Player ${cells[a]} wins!`;
+            enableResetButton();
+            return true;
+        }
+    }
+    if (!cells.includes('')) 
+    {
+        result.innerHTML = "It's a draw!";
+        enableResetButton();
+        return true;
                                                                                                                                                                                             }
                                                                                                                                                                                                 return false;
                                                                                                                                                                                                 }
